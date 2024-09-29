@@ -1,9 +1,11 @@
 import React from 'react'
 import { Box, VStack, Heading, Text, Grid, HStack, Icon } from '@chakra-ui/react';
-import { FaCode, FaDatabase, FaCertificate ,FaReact,FaCss3,FaJsSquare, FaPython, FaJava} from 'react-icons/fa';
+import { FaCode,FaCloud ,FaDatabase,FaReact,FaCss3,FaJsSquare, FaPython, FaJava} from 'react-icons/fa';
 import Layout from '../Components/Layout'
 import { RiNextjsFill } from "react-icons/ri";
 import { DiJqueryLogo } from 'react-icons/di';
+ 
+
 
 const Skills = () => {
   const technicalSkills = [
@@ -20,7 +22,7 @@ const Skills = () => {
     { name: 'SQL', icon: FaDatabase},
     { name:'JAVA',icon:FaJava},
     { name: 'TypeScript', icon: FaCode }, 
-   
+    { name: 'Appwrite', icon: FaCloud},
     // Add more technical skills here
   ];
 
