@@ -33,6 +33,8 @@ const Skills = () => {
 
   const certifications = [
     { name: 'CERTIFICATE OF PARTICIPATION for open source contribution', issuer: 'GirlScript Summer Of Code' , url: "/Debasmita Sarkar_Cert_Contributor_GSSoC2024.png" },
+    { name: 'Google Solution Challenge 2024 ', issuer: 'Google' , url: "/gogsoln.jpeg"},
+    { name: 'Postman API Fundamental Student Expert', issuer: 'Postman' , url: "/postman.jpeg"}, 
     { name: 'Course Completion Certificate of EmailWriting', issuer: 'Infosys' , url: "/EmailWriting.png"},
     { name: 'Foundation of Cybersecurity', issuer: 'Google' , url: "/cybersecurity 1.png"},
     { name: 'Network and Networks Security', issuer: 'Google' , url: "/Cybersecurity2.png"},
@@ -43,10 +45,17 @@ const Skills = () => {
     { name: 'Completion Certificate of Javascript', issuer: 'Infosys' , url: "/javascript.png"},
     { name: 'Agile Scum practice', issuer: 'Infosys' , url: "/Agile.png"},
     { name: 'Internship Preparation Workshop', issuer: 'Industry Academia Community' , url: "/Internship preparation.png"},
-     
-
+      
     // Add more certifications here
   ];
+
+  const Hackathons =[
+    {name:'Participation Certificate',issuer:'IEM',url:"/iem.jpeg"},
+    {name:'Participation Certificate ',issuer:'GCECT bytemonk',url:"/karma.jpeg"}, 
+
+    //Add more hackathons participating certificate
+  ];
+
 
 
   const handleOpenPDF = (url) => {
@@ -112,6 +121,26 @@ const Skills = () => {
         ))}
       </Grid>
     </VStack>
+  
+     {/*Hackathons*/}
+    <VStack spacing={5} align="start" maxW="1000px" mx="auto" mt={10}>
+      <Heading as="h1" size="xl" mb={5}>
+        Hackathons Participating Certificate
+      </Heading>
+      <Grid 
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} 
+        gap={6}
+      >
+        {Hackathons.map((Hackathons, index) => (
+          <CertificationCard 
+            key={index} 
+            name={Hackathons.name} 
+            issuer={Hackathons.issuer} 
+            onClick={() => handleOpenPDF(Hackathons.url)}
+          />
+        ))}
+      </Grid>
+    </VStack> 
   </Box>
 </Layout>
   )
