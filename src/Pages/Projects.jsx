@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       name: "AgriTech-Hub",
-      imageUrl: "dist/AgriTech.png",
+      imageUrl: "/AgriTech.png",
       description: "AgriTech-Hub – An intelligent agriculture platform integrating real-time data for smart crop recommendations, weather updates, plant disease detection, and government scheme insights. Built with React, Node.js, and AI-powered analysis to empower farmers with data-driven decisions.",
       liveLink: "https://agritech-hub-frontend.onrender.com/",
       githubLink: "https://github.com/Dsmita03/AgriTech-Hub"
