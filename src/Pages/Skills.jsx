@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { Box, VStack, Heading, Text, Grid, HStack, Icon } from '@chakra-ui/react';
 import { FaCode,FaCloud ,FaDatabase,FaReact,FaCss3,FaJsSquare, FaPython, FaJava} from 'react-icons/fa';
 import Layout from '../Components/Layout'
 import { RiNextjsFill } from "react-icons/ri";
-import { DiJqueryLogo } from 'react-icons/di';
- 
+import{FaAngular} from 'react-icons/fa';
+import{SiFirebase} from 'react-icons/si';
 
 
 const Skills = () => {
@@ -18,11 +18,12 @@ const Skills = () => {
     { name: 'MongoDB', icon: FaDatabase },
     { name: 'Next.js', icon: RiNextjsFill},
     { name: 'Python', icon:FaPython},
-    { name: 'JQuery', icon: DiJqueryLogo},
     { name: 'SQL', icon: FaDatabase},
     { name:'JAVA',icon:FaJava},
     { name: 'TypeScript', icon: FaCode }, 
     { name: 'Appwrite', icon: FaCloud},
+    { name: 'Angular', icon: FaAngular },  
+    { name: 'Firebase', icon: SiFirebase } 
     // Add more technical skills here
   ];
 
@@ -34,9 +35,11 @@ const Skills = () => {
   ];
 
   const certifications = [
+    { name: 'Google AI essential', issuer: 'Google' , url: "/GoogleAi.png"},
     { name: 'CERTIFICATE OF PARTICIPATION for open source contribution', issuer: 'GirlScript Summer Of Code' , url: "/Debasmita Sarkar_Cert_Contributor_GSSoC2024.png" },
     { name: 'Google Solution Challenge 2024 ', issuer: 'Google' , url: "/gogsoln.jpeg"},
     { name: 'Postman API Fundamental Student Expert', issuer: 'Postman' , url: "/postman.jpeg"}, 
+    { name: 'Angular Course certificate', issuer: 'Infosys' , url: "/Angular.png"}, 
     { name: 'Course Completion Certificate of EmailWriting', issuer: 'Infosys' , url: "/EmailWriting.png"},
     { name: 'Foundation of Cybersecurity', issuer: 'Google' , url: "/cybersecurity 1.png"},
     { name: 'Network and Networks Security', issuer: 'Google' , url: "/Cybersecurity2.png"},
@@ -47,7 +50,8 @@ const Skills = () => {
     { name: 'Completion Certificate of Javascript', issuer: 'Infosys' , url: "/javascript.png"},
     { name: 'Agile Scum practice', issuer: 'Infosys' , url: "/Agile.png"},
     { name: 'Internship Preparation Workshop', issuer: 'Industry Academia Community' , url: "/Internship preparation.png"},
-      
+    { name: 'Canva Course Certificate ', issuer: 'Coursera ' , url: "/Canva.png"},
+       
     // Add more certifications here
   ];
 

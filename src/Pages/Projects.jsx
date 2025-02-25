@@ -6,6 +6,13 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
+      name: "AgriTech-Hub",
+      imageUrl: "dist/AgriTech.png",
+      description: "AgriTech-Hub – An intelligent agriculture platform integrating real-time data for smart crop recommendations, weather updates, plant disease detection, and government scheme insights. Built with React, Node.js, and AI-powered analysis to empower farmers with data-driven decisions.",
+      liveLink: "https://agritech-hub-frontend.onrender.com/",
+      githubLink: "https://github.com/Dsmita03/AgriTech-Hub"
+    },
+    {
       name: "AlgoScope",
       imageUrl: "/algo.png",
       description: "AlgoScope is a web-based tool built with Next.js and TypeScript, designed to help users visualize and analyze sorting algorithms",

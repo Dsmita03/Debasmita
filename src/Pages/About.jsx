@@ -30,12 +30,11 @@ const About = () => {
             </Heading>
           </HStack>
           <Text fontSize="lg" mb={5}>
-          Hello! I'm Debasmita Sarkar ,a third-year student pursuing a degree in Information Technology.
-          I have a passion for technology and a keen interest in exploring various aspects of IT, including 
-          software development, networking, and cybersecurity. In my free time, I enjoy experimenting with coding projects, 
+          Hello! I'm Debasmita Sarkar, a third-year Information Technology student with a passion for technology. 
+          I have a keen interest in software development and networking. In my free time, I love experimenting with coding projects, 
           staying updated with the latest tech trends, and participating in hackathons and IT-related events. I'm excited to continue
-          learning and growing in this dynamic field and look forward to contributing to the ever-evolving world of technology. Let's 
-          connect and geek out over all things IT!
+           learning and growing in this dynamic field and look forward to contributing to the ever-evolving world of technology. Let's 
+           connect and geek out over all things IT.
           </Text>
         </Box>
   

@@ -101,7 +101,7 @@ const Sidebar = () => {
       <Box pt="5">
         <HStack>
           <Icon as={MdEmail} fontSize={"23px"} color="#28969c"/>
-          <Text fontSize={"15px"}>debasmita12b@gmail.com</Text>
+          <Text fontSize={"15px"}>debasmita.s003@gmail.com</Text>
         </HStack>
         <HStack pt="3">
           <Icon as={FaLocationDot} fontSize={"23px"} color="#28969c" />
@@ -111,7 +111,7 @@ const Sidebar = () => {
       {/* Download Resume Button */}
       <Button
         as="a"
-         href="https://drive.google.com/file/d/1zf1oBJej06Iqsjo63W3bRCQ2gffB2UvH/view?usp=sharing"
+         href="https://drive.google.com/file/d/1TunqRosiTWmfd1GRFkdzIeVWk_7KiJnW/view?usp=sharing"
         download="Resume.pdf"
         mt="6"
         colorScheme="blue"
