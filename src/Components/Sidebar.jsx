@@ -111,7 +111,7 @@ const Sidebar = () => {
       {/* Download Resume Button */}
       <Button
         as="a"
-         href="https://drive.google.com/file/d/1TunqRosiTWmfd1GRFkdzIeVWk_7KiJnW/view?usp=sharing"
+         href="https://drive.google.com/file/d/1IV112B_lOKk_dZxXqmc8UwOwgiQaFxTo/view?usp=sharing"
         download="Resume.pdf"
         mt="6"
         colorScheme="blue"

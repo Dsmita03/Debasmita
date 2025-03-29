@@ -96,7 +96,7 @@ const Contact = () => {
             </Heading>
             <HStack>
               <Icon as={MdEmail} w={6} h={6} color="#28969c" />
-              <Text fontSize="lg">debasmita12b@gmail.com</Text>
+              <Text fontSize="lg">debasmita.s003@gmail.com</Text>
             </HStack>
             <HStack>
               <Icon as={MdLocationOn} w={6} h={6} color="#28969c" />
