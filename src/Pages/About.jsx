@@ -1,87 +1,175 @@
-import React from 'react'
-import Layout from '../Components/Layout'
-import { Box, Heading, Text, VStack, Divider, useColorModeValue ,Icon,HStack} from "@chakra-ui/react";
+import Layout from '../Components/Layout';
+import {
+  Box,
+  Heading,
+  Text,
+  VStack,
+  Icon,
+  HStack,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { FiUser } from 'react-icons/fi';
-import { GiBookshelf } from 'react-icons/gi';
 import { MdSchool } from 'react-icons/md';
 
 const About = () => {
-    const bg = useColorModeValue("gray.100", "gray.800"); // Light/Dark mode background
-    const textColor = useColorModeValue("gray.800", "white");
+  const bg = useColorModeValue('#121212', '#121212'); // Consistent dark background
+  const textColor = useColorModeValue('white', 'white');
+  const accentColor = '#28969c'; // Matching accent color
+
+  const educationData = [
+    {
+      year: '2022-2026',
+      degree: 'Bachelor of Technology (B.Tech)',
+      location: 'Government College of Engineering and Ceramic Technology',
+      grade: 'CGPA: 9.24',
+      department: 'Information Technology',
+    },
+    {
+      year: '2020-2022',
+      degree: 'Higher Secondary (12th)',
+      location: 'Pathfinder Higher Secondary Public School',
+      grade: 'Grade: 92%',
+      board: 'WBCHSE',
+    },
+    {
+      year: '2020',
+      degree: 'Secondary (10th)',
+      location: "St. Joseph's English Medium School",
+      grade: 'Grade: 91%',
+      board: 'ICSE',
+    },
+  ];
 
   return (
     <Layout>
-    <Box 
-      bg="#121212"  // Dark Background
-      color="#FFFFFF"  // White Text
-      py={{base:"0",md:"10"}} 
-      px={5}  
-      borderRadius={"15"} 
-      m={"4"} 
-      minH={"fit-content"}
-    >
-      <VStack spacing={5} align="start" maxW="1000px" mx={{base:"0",md:"20"}}>
-        {/* Developer Introduction */}
-        <Box>
-          <HStack gap={"3"} alignItems="center" mb={"5"}>
-            <Icon as={FiUser} fontSize={"30px"} color="#28969c"/>  {/* Accent Color */}
-            <Heading as="h1" size="xl">
-              About Me
-            </Heading>
-          </HStack>
-          <Text fontSize="lg" mb={5}>
-          Hello! I'm Debasmita Sarkar, a third-year Information Technology student with a passion for technology. 
-          I have a keen interest in software development and networking. In my free time, I love experimenting with coding projects, 
-          staying updated with the latest tech trends, and participating in hackathons and IT-related events. I'm excited to continue
-           learning and growing in this dynamic field and look forward to contributing to the ever-evolving world of technology. Let's 
-           connect and geek out over all things IT.
-          </Text>
-        </Box>
-  
-        {/* Divider */}
-        <Divider orientation="horizontal" borderColor="#444444" />  {/* Dark Gray Divider */}
-  
-        {/* Education Section */}
-        <Box>
-          <HStack gap={"3"} alignItems="center" mb={"5"}>
-            <Icon as={GiBookshelf} fontSize={"30px"} color="#28969c"/>  {/* Accent Color */}
-            <Heading as="h1" size="xl" lineHeight="1.2">
-              Education
-            </Heading>
-          </HStack>
-          <VStack spacing={5} align="stretch">
-            <EducationCard year="2022-2026" description="B.Tech in Information Technology" location="Government College of Engineering and Ceramic Technology" />
-            <EducationCard year="2020-2022" description="Higher Secondary (12th)" location=" Pathfinder Higher Secondary Public School"/>
-            <EducationCard year="2020" description="Secondary (10th)" location="St. Joseph's English Medium School" />
-          </VStack>
-        </Box>
-      </VStack>
-    </Box>
-  </Layout>
-  
-  )
-}
+      <Box bg={bg} color={textColor} py={12} px={{ base: 4, md: 12 }} minH="100vh">
+        <VStack spacing={12} align="start" maxW="1000px" mx="auto">
+          {/* About Me Section */}
+          <Box w="100%">
+            <HStack spacing={4} mb={4} align="center">
+              <Icon as={FiUser} boxSize={7} color={accentColor} />
+              <Heading as="h2" size="lg" fontWeight="bold">
+                About Me
+              </Heading>
+            </HStack>
+            <Text fontSize="lg" lineHeight="1.8">
+              Hello, I'm <b>Debasmita Sarkar</b>, a passionate and driven <b>Full-Stack Developer</b> and <b>aspiring Software Engineer</b>, currently pursuing my <b>B.Tech in Information Technology</b> at <b>GCECT</b> (Class of 2026). With a deep understanding of web development technologies like <b>React</b>, <b>Node.js</b>, <b>MongoDB</b>, and <b>Firebase</b>, I am dedicated to building intuitive, efficient, and scalable applications. I thrive on solving complex real-world problems with innovative solutions and constantly challenge myself to learn new technologies and frameworks. My journey is fueled by my curiosity to create a positive impact through technology.
+            </Text>
+          </Box>
 
+          {/* Education Timeline */}
+          <Box w="100%">
+            <HStack spacing={4} mb={10} align="center">
+              <Icon as={MdSchool} boxSize={7} color={accentColor} />
+              <Heading as="h2" size="lg" fontWeight="bold">
+                Education
+              </Heading>
+            </HStack>
 
-function EducationCard({ year, description , location}) {
-    return (
-      <Box
-      bg="transparent"  // Dark Gray Background
-      color="#FFFFFF"  // White Text
-      p={4}
-      display="flex"
-      borderRadius="md"
-      
-    >
-      <Box as={MdSchool} w={6} h={6} mr={3} color="#28969c"/>  {/* Accent Color */}
-      <VStack alignItems="flex-start" spacing={"1"}>
-        <Text fontSize={"sm"}>{year}</Text>
-        <Text fontSize={"lg"} fontWeight="600" color="#28969c">{description}</Text>  {/* Accent Color */}
-        <Text fontSize={"sm"}>{location}</Text>
-      </VStack>
-    </Box>
-    );
-  }
-  
+            <Box position="relative" minH="100px">
+              {/* Vertical timeline line */}
+              <Box
+                position="absolute"
+                left="50%"
+                top="0"
+                bottom="0"
+                width="2px"
+                bg={accentColor}
+                transform="translateX(-50%)"
+                zIndex={0}
+              />
 
-export default About
+              <VStack spacing={14} align="stretch" position="relative" zIndex={1}>
+                {educationData.map((edu, index) => {
+                  const isLeft = index % 2 === 0;
+
+                  return (
+                    <Box
+                      key={index}
+                      display="flex"
+                      justifyContent={isLeft ? 'flex-start' : 'flex-end'}
+                      alignItems="center"
+                      position="relative"
+                    >
+                      {/* Arrow pointing toward the box */}
+                      <Box
+                        position="absolute"
+                        top="50%"
+                        left={isLeft ? 'calc(50% - 6px)' : undefined}
+                        right={!isLeft ? 'calc(50% - 6px)' : undefined}
+                        width="0"
+                        height="0"
+                        borderTop="8px solid transparent"
+                        borderBottom="8px solid transparent"
+                        borderRight={isLeft ? `12px solid ${accentColor}` : undefined}
+                        borderLeft={!isLeft ? `12px solid ${accentColor}` : undefined}
+                        transform="translateY(-50%)"
+                        zIndex={1}
+                      />
+
+                      {/* Dot - Hidden on mobile */}
+                      <Box
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        transform="translate(-50%, -50%)"
+                        w="20px"
+                        h="20px"
+                        bg={accentColor}
+                        borderRadius="full"
+                        zIndex={2}
+                        display={{ base: 'none', md: 'block' }} // Hide on mobile devices
+                      />
+
+                      {/* Education Card */}
+                      <Box
+                        bg="#1E1E1E"
+                        borderRadius="lg"
+                        border={`1px solid ${accentColor}`}
+                        p={6}
+                        width={{ base: '100%', md: '45%' }}
+                        _hover={{
+                          transform: 'scale(1.05)',
+                          transition: '0.3s ease',
+                          boxShadow: `0 0 10px 2px ${accentColor}`,
+                        }}
+                        _active={{
+                          transform: 'scale(1.03)',
+                        }}
+                      >
+                        <Text fontSize="sm" color="gray.400">
+                          {edu.year}
+                        </Text>
+                        <Text fontSize="lg" fontWeight="bold" color={accentColor}>
+                          {edu.degree}
+                        </Text>
+                        <Text fontSize="md" fontWeight="semibold" color="white">
+                          {edu.location}
+                        </Text>
+                        <Text fontSize="sm" fontWeight="bold" color="gray.300">
+                          {edu.grade}
+                        </Text>
+                        {edu.department && (
+                          <Text fontSize="sm" color="gray.400" fontStyle="italic">
+                            Department: {edu.department}
+                          </Text>
+                        )}
+                        {edu.board && (
+                          <Text fontSize="sm" color="gray.400">
+                            Board: {edu.board}
+                          </Text>
+                        )}
+                      </Box>
+                    </Box>
+                  );
+                })}
+              </VStack>
+            </Box>
+          </Box>
+        </VStack>
+      </Box>
+    </Layout>
+  );
+};
+
+export default About;
