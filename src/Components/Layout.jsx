@@ -1,12 +1,11 @@
 import { Box, Flex, IconButton } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-import { HamburgerIcon } from "@chakra-ui/icons"; // Ensure you have this import
-
+import { HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to toggle sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -15,7 +14,7 @@ const Layout = ({ children }) => {
   return (
     <Box bg="#121212" color="white" minH="100vh">
       <Flex direction={{ base: "column", md: "row" }} h="100%">
-        {/* Sidebar - Full height, fixed on desktop */}
+        {/* Sidebar - Desktop only */}
         <Box
           position="fixed"
           top="0"
@@ -29,14 +28,14 @@ const Layout = ({ children }) => {
           <Sidebar />
         </Box>
 
-        {/* Main Content Section */}
+        {/* Main content wrapper */}
         <Box
           flex="1"
           display="flex"
           flexDirection="column"
-          ml={{ base: 0, md: "20rem" }} // Offset content on desktop for the sidebar
+          ml={{ base: 0, md: "20rem" }}
         >
-          {/* Fixed Navbar for desktop */}
+          {/* Desktop Navbar */}
           <Box
             position="fixed"
             top="0"
@@ -46,14 +45,14 @@ const Layout = ({ children }) => {
             display={{ base: "none", lg: "block" }}
             bg="#121212"
             boxShadow="md"
-            width="100%" // Ensure navbar spans the full width
+            width="100%"
           >
             <Navbar />
           </Box>
 
-          {/* Hamburger Icon (Only visible on mobile) */}
+          {/* Hamburger menu for mobile */}
           <Box
-            display={{ base: "block", lg: "none" }} // Show only on mobile
+            display={{ base: "block", lg: "none" }}
             position="fixed"
             top="1rem"
             left="1rem"
@@ -69,51 +68,53 @@ const Layout = ({ children }) => {
             />
           </Box>
 
-          {/* Content with top padding to avoid overlap with fixed navbar */}
+          {/* Main Content */}
           <Box
             mt={{ base: 0, lg: "4rem" }}
             px={{ base: 4, md: 6 }}
             py={4}
             flex="1"
-            pb={{ base: "6rem", lg: "4rem" }} // prevents bottom overlap with mobile navbar
+            pb={{ base: "8rem", lg: "4rem" }} // Increased bottom padding for mobile to avoid hiding last content
             overflowY="auto"
-            zIndex="1" // Make sure content is not hidden behind sidebar/navbar
+            zIndex="1"
           >
             {children}
           </Box>
 
-          {/* Bottom navbar for mobile */}
+          {/* Mobile Bottom Navbar */}
           <Box
             position="fixed"
             bottom="0"
             left="0"
-            width={{ base: "90%", md: "100%" }} // Decrease width for mobile (90%)
-            marginLeft="auto" // Center it
-            marginRight="auto" // Center it
+            right="0"
+            width="100%"
             display={{ base: "flex", lg: "none" }}
             bg="#121212"
             justifyContent="center"
             py="1.5rem"
+            px="1rem"
             boxShadow="0 -2px 10px rgba(0,0,0,0.4)"
             zIndex="999"
           >
             <Navbar />
           </Box>
-        </Box>
 
-        {/* Mobile Sidebar (Appears when hamburger is clicked) */}
-        <Box
-          position="fixed"
-          top="0"
-          left="0"
-          w="100%"
-          h="100vh"
-          bg="#1a1a1a"
-          zIndex="998"
-          display={{ base: isSidebarOpen ? "block" : "none", lg: "none" }} // Only visible when isSidebarOpen is true
-          transition="all 0.3s ease"
-        >
-          <Sidebar />
+          {/* Mobile Sidebar */}
+          <Box
+            position="fixed"
+            top="0"
+            left="0"
+            w="100%"
+            h="calc(100vh - 6rem)" // 6rem is the height of the mobile bottom navbar
+            bg="#1a1a1a"
+            zIndex="998"
+            display={{ base: isSidebarOpen ? "block" : "none", lg: "none" }}
+            transition="all 0.3s ease"
+            borderRadius="0" // ✅ Ensures no rounded edges
+            overflow="hidden" // ✅ Ensures no overflow visuals
+          >
+            <Sidebar />
+          </Box>
         </Box>
       </Flex>
     </Box>

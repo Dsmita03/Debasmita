@@ -105,6 +105,7 @@ const About = () => {
                         borderLeft={!isLeft ? `12px solid ${accentColor}` : undefined}
                         transform="translateY(-50%)"
                         zIndex={1}
+                        display={{ base: 'none', md: 'block' }} // Hide on mobile devices
                       />
 
                       {/* Dot - Hidden on mobile */}

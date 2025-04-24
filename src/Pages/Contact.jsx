@@ -31,7 +31,24 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
+    // Check if all fields are filled
     const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    if (!name || !email || !message) {
+      toast({
+        title: 'Error!',
+        description: 'Please fill all the fields before submitting.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+        position: 'top-right',
+      });
+      return;
+    }
 
     formData.append('access_key', 'bb7c6d57-f4bb-443b-ad2f-c66f6794f0f6');
 
@@ -181,7 +198,7 @@ const Contact = () => {
                       _hover={{ bg: '#535353' }}
                     />
                     <Button
-                      colorScheme="blue"
+                      bg="#366669"
                       size="lg"
                       type="submit"
                       _hover={{ bg: '#28969c' }}

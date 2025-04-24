@@ -29,7 +29,7 @@ const Sidebar = () => {
       justifyContent={"center"}
       bgGradient="linear(to-b, #2c3e50, #34495e)" // Gradient background
       color="white"
-      borderRadius="lg" // Rounded corners
+      borderRadius={{ base: "0", md: "lg" }} // No rounded corners on mobile
       boxShadow="xl" // Add shadow for depth
     >
       {/* Developer Info Card */}
