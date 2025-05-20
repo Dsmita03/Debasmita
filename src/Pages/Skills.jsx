@@ -38,6 +38,9 @@ const Skills = () => {
     { name: 'Google Solution Challenge 2024', issuer: 'Google', url: "/gogsoln.jpeg" },
     { name: 'Postman API Fundamental Student Expert', issuer: 'Postman', url: "/postman.jpeg" },
     { name: 'Angular Course Certificate', issuer: 'Infosys', url: "/Angular.png" },
+    { name: 'Foundation of UX Design Certificate', issuer: 'Google', url: "/design.png" }, 
+    { name: 'Database & SQL Certificate', issuer: 'IBM', url: "/sql.png" },
+    { name: 'Master Data Management for beginners', issuer: 'tcs ion', url: "/data.png" },
     { name: 'Email Writing', issuer: 'Infosys', url: "/EmailWriting.png" },
     { name: 'Foundation of Cybersecurity', issuer: 'Google', url: "/cybersecurity 1.png" },
     { name: 'Network and Network Security', issuer: 'Google', url: "/Cybersecurity2.png" },
@@ -97,13 +100,21 @@ const Skills = () => {
 
 // Helper Components
 const Section = ({ title, children }) => (
-  <VStack spacing={5} align="start" maxW="1000px" mx="auto" mt={10}>
+  <VStack
+    spacing={5}
+    align={{ base: "center", md: "start" }}
+    textAlign={{ base: "center", md: "left" }}
+    maxW="1000px"
+    mx="auto"
+    mt={10}
+  >
     <Heading as="h1" size="xl" mb={5} color="#00d8a7">
       {title}
     </Heading>
     {children}
   </VStack>
 );
+
 
 const SkillCard = ({ name, icon }) => (
   <HStack
@@ -114,13 +125,17 @@ const SkillCard = ({ name, icon }) => (
     justifyContent="center"
     alignItems="center"
     spacing={3}
+    width="100%"
+    flexDirection={{ base: "column", md: "row" }}
+    textAlign={{ base: "center", md: "left" }}
   >
-    <Icon as={icon} w={6} h={6} color="#28969c" />
+    <Icon as={icon} w={6} h={6} color="#28969c" mb={{ base: 2, md: 0 }} />
     <Text fontSize="lg" fontWeight="600">
       {name}
     </Text>
   </HStack>
 );
+
 
 const CertificationCard = ({ name, issuer, url, onClick }) => (
   <Box
@@ -131,8 +146,9 @@ const CertificationCard = ({ name, issuer, url, onClick }) => (
     onClick={onClick}
     cursor="pointer"
     _hover={{ transform: "scale(1.02)", transition: "0.2s" }}
+    textAlign={{ base: "center", md: "left" }}
   >
-    <Image src={url} alt={name} borderRadius="md" mb={3} />
+    <Image src={url} alt={name} borderRadius="md" mb={3} mx="auto" />
     <Heading as="h4" size="md" mb={1} color="#28969c">
       {name}
     </Heading>
@@ -141,5 +157,6 @@ const CertificationCard = ({ name, issuer, url, onClick }) => (
     </Text>
   </Box>
 );
+
 
 export default Skills;

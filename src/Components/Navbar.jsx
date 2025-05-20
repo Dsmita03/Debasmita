@@ -1,4 +1,3 @@
- 
 import {
   Box,
   Flex,
@@ -24,7 +23,7 @@ const Navbar = () => {
       justifyContent="center"
       alignItems="center"
       mt="4"
-      bgGradient="linear(to-r, teal.400, pink.500)" // Gradient background for visual pop
+      bgGradient="linear(to-r, teal.400, pink.500)"
       py="2"
       boxShadow="lg"
       zIndex="1000"
@@ -35,10 +34,15 @@ const Navbar = () => {
         width="100%"
         maxWidth="1200px"
         display="flex"
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="center"
       >
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify={{ base: "center", md: "space-evenly" }}
+          align="center"
+          width="100%"
+          flexWrap="wrap"
+        >
           {/* About Me Icon */}
           <Tooltip
             label="About Me"
@@ -58,13 +62,14 @@ const Navbar = () => {
                 bg="transparent"
                 color="white"
                 _hover={{
-                  bg: "whiteAlpha.800", // White hover background for better contrast
-                  color: "teal.500",    // Icon color changes to teal
-                  transform: "scale(1.1)", // Smooth scaling effect
-                  transition: "all 0.3s ease", // Animation on hover
+                  bg: "whiteAlpha.800",
+                  color: "teal.500",
+                  transform: "scale(1.1)",
+                  transition: "all 0.3s ease",
                 }}
                 size={iconSize}
                 isRound
+                mx={{ base: "2", md: "0" }}
               />
             </Link>
           </Tooltip>
@@ -94,7 +99,7 @@ const Navbar = () => {
                 }}
                 size={iconSize}
                 isRound
-                ml="5"
+                mx={{ base: "2", md: "0" }}
               />
             </Link>
           </Tooltip>
@@ -124,7 +129,7 @@ const Navbar = () => {
                 }}
                 size={iconSize}
                 isRound
-                ml="5"
+                mx={{ base: "2", md: "0" }}
               />
             </Link>
           </Tooltip>
@@ -154,7 +159,7 @@ const Navbar = () => {
                 }}
                 size={iconSize}
                 isRound
-                ml="5"
+                mx={{ base: "2", md: "0" }}
               />
             </Link>
           </Tooltip>
