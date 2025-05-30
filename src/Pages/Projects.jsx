@@ -33,6 +33,37 @@ const Projects = () => {
       liveLink: 'https://algo-scope.vercel.app',
       githubLink: 'https://github.com/Dsmita03/AlgoScope',
     },
+  {
+      name: 'EduStack',
+      imageUrl: '/edu.png',
+      description:'A MERN-based web app for browsing and managing educational courses. Built with React, Node.js, Express, and MongoDB, it serves as a foundation for scalable e-learning platforms.',
+      // liveLink: 'https://algo-scope.vercel.app',
+      githubLink: 'https://github.com/Dsmita03/EduStack',
+    },    
+   {
+      name: 'RealTimeChatApp',
+      imageUrl: '/real.png',
+      description: 'A real-time chat application built with Socket.io, Node.js, Express, and React. It enables instant messaging between users with live updates and a clean UI for seamless communication.',
+      // liveLink: 'https://algo-scope.vercel.app',
+      githubLink: 'https://github.com/Dsmita03/RealTimeChat',
+    },    
+{
+      name: 'CryptoWeather-Nexus',
+      imageUrl: '/crypto.png',
+      description:
+        'CryptoWeather Nexus is a modern dashboard integrating weather data, cryptocurrency information, and real-time notifications via WebSocket',
+      // liveLink: 'https://algo-scope.vercel.app',
+      githubLink: 'https://github.com/Dsmita03/CryptoWeather-Nexus',
+    },    
+{
+      name: 'AI-Powered-Resume-Analyzer',
+      imageUrl: '/res.png',
+      description:
+        'A web application that uses Gemini AI and NLP to analyze uploaded resumes, offering intelligent suggestions on skills, formatting, and content to enhance job application success. ',
+      // liveLink: 'https://algo-scope.vercel.app',
+      githubLink: 'https://github.com/Dsmita03/AI-Powered-Resume-Analyzer',
+    },    
+
     {
       name: 'Snapgram',
       imageUrl: '/snapgram.png',

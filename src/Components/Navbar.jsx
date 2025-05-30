@@ -3,7 +3,8 @@ import {
   Flex,
   IconButton,
   Tooltip,
-  useBreakpointValue
+  useBreakpointValue,
+  useColorModeValue
 } from "@chakra-ui/react";
 import {
   FaUser,
@@ -11,160 +12,81 @@ import {
   FaLaptopCode,
   FaEnvelope
 } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
+
+const navItems = [
+  { to: "/", icon: FaUser, label: "About Me" },
+  { to: "/skills", icon: FaGraduationCap, label: "Skills" },
+  { to: "/projects", icon: FaLaptopCode, label: "Projects" },
+  { to: "/contact", icon: FaEnvelope, label: "Contact Me" },
+];
 
 const Navbar = () => {
   const iconSize = useBreakpointValue({ base: "md", md: "lg" });
+  const location = useLocation();
+  // const bgColor = useColorModeValue("whiteAlpha.700", "blackAlpha.400");
+  const inactiveColor = useColorModeValue("gray.600", "gray.400");
+  const activeBg = useColorModeValue("teal.100", "teal.700"); 
+  const bgColor = useColorModeValue("whiteAlpha.900", "gray.800");
+  const activeColor = useColorModeValue("teal.600", "teal.300");
 
   return (
     <Box
-      display="flex"
       width="100%"
-      justifyContent="center"
-      alignItems="center"
-      mt="4"
-      bgGradient="linear(to-r, teal.400, pink.500)"
-      py="2"
-      boxShadow="lg"
+      position="sticky"
+      top="0"
       zIndex="1000"
+      backdropFilter="saturate(180%) blur(10px)"
+      bg={bgColor}
+      boxShadow="md"
+      borderBottom="1px solid"
+      borderColor={useColorModeValue("gray.200", "whiteAlpha.200")}
     >
-      <Box
-        px={{ base: "5", md: "10" }}
+      <Flex
+        maxW="1200px"
+        mx="auto"
         py="3"
-        width="100%"
-        maxWidth="1200px"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
+        px={{ base: 5, md: 10 }}
+        justify="center"
+        align="center"
+        wrap="wrap"
+        gap={{ base: 3, md: 6 }}
       >
-        <Flex
-          justify={{ base: "center", md: "space-evenly" }}
-          align="center"
-          width="100%"
-          flexWrap="wrap"
-        >
-          {/* About Me Icon */}
-          <Tooltip
-            label="About Me"
-            aria-label="About Me"
-            bg="gray.700"
-            color="white"
-            fontSize="14px"
-            borderRadius="md"
-            p="2"
-            hasArrow
-            placement="bottom"
-          >
-            <Link to="/">
-              <IconButton
-                aria-label="About Me"
-                icon={<FaUser />}
-                bg="transparent"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.800",
-                  color: "teal.500",
-                  transform: "scale(1.1)",
-                  transition: "all 0.3s ease",
-                }}
-                size={iconSize}
-                isRound
-                mx={{ base: "2", md: "0" }}
-              />
-            </Link>
-          </Tooltip>
-
-          {/* Skills Icon */}
-          <Tooltip
-            label="Skills"
-            aria-label="Skills"
-            bg="gray.700"
-            color="white"
-            fontSize="14px"
-            borderRadius="md"
-            p="2"
-            hasArrow
-            placement="bottom"
-          >
-            <Link to="/skills">
-              <IconButton
-                aria-label="Skills"
-                icon={<FaGraduationCap />}
-                bg="transparent"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.800",
-                  color: "teal.500",
-                  transform: "scale(1.1)",
-                }}
-                size={iconSize}
-                isRound
-                mx={{ base: "2", md: "0" }}
-              />
-            </Link>
-          </Tooltip>
-
-          {/* Projects Icon */}
-          <Tooltip
-            label="Projects"
-            aria-label="Projects"
-            bg="gray.700"
-            color="white"
-            fontSize="14px"
-            borderRadius="md"
-            p="2"
-            hasArrow
-            placement="bottom"
-          >
-            <Link to="/projects">
-              <IconButton
-                aria-label="Projects"
-                icon={<FaLaptopCode />}
-                bg="transparent"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.800",
-                  color: "teal.500",
-                  transform: "scale(1.1)",
-                }}
-                size={iconSize}
-                isRound
-                mx={{ base: "2", md: "0" }}
-              />
-            </Link>
-          </Tooltip>
-
-          {/* Contact Icon */}
-          <Tooltip
-            label="Contact Me"
-            aria-label="Contact Me"
-            bg="gray.700"
-            color="white"
-            fontSize="14px"
-            borderRadius="md"
-            p="2"
-            hasArrow
-            placement="bottom"
-          >
-            <Link to="/contact">
-              <IconButton
-                aria-label="Contact Me"
-                icon={<FaEnvelope />}
-                bg="transparent"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.800",
-                  color: "teal.500",
-                  transform: "scale(1.1)",
-                }}
-                size={iconSize}
-                isRound
-                mx={{ base: "2", md: "0" }}
-              />
-            </Link>
-          </Tooltip>
-        </Flex>
-      </Box>
+        {navItems.map(({ to, icon: Icon, label }) => {
+          const isActive = location.pathname === to;
+          return (
+            <Tooltip
+              key={to}
+              label={label}
+              hasArrow
+              bg="gray.700"
+              color="white"
+              placement="bottom"
+              fontSize="14px"
+              p="2"
+              borderRadius="md"
+            >
+              <Link to={to}>
+               <IconButton
+             aria-label={label}
+              icon={<Icon />}
+            variant="ghost"
+            color={isActive ? activeColor : inactiveColor}
+            bg={isActive ? activeBg : "transparent"}
+            _hover={{
+             bg: activeBg,
+              color: activeColor,
+              transform: "scale(1.1)",
+              transition: "all 0.3s ease",
+            }}
+            size={iconSize}
+            isRound
+            />
+               </Link>
+            </Tooltip>
+          );
+        })}
+      </Flex>
     </Box>
   );
 };
