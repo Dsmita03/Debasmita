@@ -1,7 +1,6 @@
-
-import { Box } from '@chakra-ui/react'
+ 
 import './App.css'
-import Layout from './Components/Layout'
+// import Layout from './Components/Layout'
 import About from './Pages/About.jsx'
 import Skills from './Pages/Skills.jsx'
 import Projects from './Pages/Projects.jsx'

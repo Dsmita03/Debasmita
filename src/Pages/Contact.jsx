@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Layout from '../Components/Layout';
 import {
   Box,
@@ -14,7 +14,6 @@ import {
 } from '@chakra-ui/react';
 import { motion, useInView } from 'framer-motion';
 import { MdEmail, MdLocationOn } from 'react-icons/md';
-import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [showForm, setShowForm] = useState(false);
@@ -25,14 +24,12 @@ const Contact = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 3000); // Show form after 3 seconds
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
-
-    // Check if all fields are filled
     const formData = new FormData(event.target);
     const name = formData.get('name');
     const email = formData.get('email');
@@ -51,7 +48,6 @@ const Contact = () => {
     }
 
     formData.append('access_key', 'bb7c6d57-f4bb-443b-ad2f-c66f6794f0f6');
-
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
@@ -88,19 +84,34 @@ const Contact = () => {
   return (
     <Layout>
       <Box
-        py={{ base: '0', md: '10' }}
-        px={5}
-        bg="#121212"
+        minH="100vh"
+        bg="#0f172a"
         color="#FFFFFF"
-        borderRadius="15"
-        m={4}
-        minH={'fit-content'}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        px={{ base: 4, md: 10 }}
+        py={{ base: 8, md: 16 }}
       >
-        <Box display="flex" flexDirection={{ base: 'column', md: 'row' }} p={{ base: '0', md: '10' }}>
+        <Box
+          w="full"
+          maxW="1000px"
+          display="flex"
+          flexDirection={{ base: 'column', md: 'row' }}
+          bg="#1e293b"
+          borderRadius="xl"
+          boxShadow="xl"
+          overflow="hidden"
+        >
           {/* Left Section */}
-          <Box flex="1" mr={{ md: 10 }} mb={{ base: 10, md: 0 }}>
-            <VStack align="start" spacing={{ base: '3', md: '5' }}>
-              <Heading as="h1" size="2xl" mt={{ base: '0', md: '6' }} mb={{ base: '1', md: '6' }} color="#FFFFFF">
+          <Box
+            flex="1"
+            p={{ base: 6, md: 10 }}
+            borderBottom={{ base: '1px solid #2d3748', md: 'none' }}
+            borderRight={{ md: '1px solid #2d3748' }}
+          >
+            <VStack align="start" spacing={{ base: 4, md: 6 }}>
+              <Heading as="h1" size="2xl">
                 Let's Work Together
               </Heading>
               <HStack>
@@ -115,7 +126,7 @@ const Contact = () => {
           </Box>
 
           {/* Right Section */}
-          <Box flex="1">
+          <Box flex="1" p={{ base: 6, md: 10 }}>
             {!showForm ? (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -123,7 +134,6 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
                 ref={ref}
               >
-                {/* Animation for loading state */}
                 <Box h="full" display="flex" justifyContent="center" alignItems="center">
                   <svg width="300px" height="300px" viewBox="0 0 32.666 32.666" fill="none" stroke="#28969c">
                     <motion.path
@@ -156,51 +166,46 @@ const Contact = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <VStack
-                    spacing={5}
-                    p={{ base: '0', md: '8' }}
-                    bg={{ base: '#121212', md: '#2c2c2c' }}
-                    borderRadius="lg"
-                    boxShadow="md"
-                  >
+                  <VStack spacing={5}>
                     <Input
                       placeholder="Name"
                       size="lg"
                       name="name"
-                      bg="#424242"
+                      bg="#334155"
                       color="#FFFFFF"
                       border="none"
                       focusBorderColor="#28969c"
+                      _hover={{ bg: '#475569' }}
                       autoComplete="off"
-                      _hover={{ bg: '#535353' }}
                     />
                     <Input
                       placeholder="Email"
                       type="email"
                       size="lg"
                       name="email"
-                      bg="#424242"
+                      bg="#334155"
                       color="#FFFFFF"
                       border="none"
                       focusBorderColor="#28969c"
+                      _hover={{ bg: '#475569' }}
                       autoComplete="off"
-                      _hover={{ bg: '#535353' }}
                     />
                     <Textarea
                       placeholder="Message"
                       size="lg"
                       name="message"
-                      bg="#424242"
+                      bg="#334155"
                       color="#FFFFFF"
                       border="none"
                       focusBorderColor="#28969c"
+                      _hover={{ bg: '#475569' }}
                       autoComplete="off"
-                      _hover={{ bg: '#535353' }}
                     />
                     <Button
                       bg="#366669"
                       size="lg"
                       type="submit"
+                      w="full"
                       _hover={{ bg: '#28969c' }}
                     >
                       Submit

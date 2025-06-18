@@ -8,119 +8,115 @@ import {
   Button,
   HStack,
   Icon,
+
 } from "@chakra-ui/react";
-import {
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaEye } from "react-icons/fa";
+import { FaXTwitter, FaLocationDot } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
-import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaEye } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
     <Box
-      p="6"
-      height={{ base: "80vh", md: "100vh" }}
-      display={"flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      bgGradient="linear(to-b, #2c3e50, #34495e)" // Gradient background
+      p={6}
+      height={{ base: "auto", md: "100vh" }}
+      w="full"
+      bgGradient="linear(to-b, #1e3c72, #2a5298)"
       color="white"
-      borderRadius={{ base: "0", md: "lg" }} // No rounded corners on mobile
-      boxShadow="xl" // Add shadow for depth
+      borderRadius={{ base: "none", md: "xl" }}
+      boxShadow="2xl"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
     >
-      {/* Developer Info Card */}
-      <VStack spacing="4" alignItems="center" textAlign="center">
-        <Avatar size="2xl" name="" src="../profile.png" border="4px solid #ecf0f1" />
+      <VStack spacing={6} textAlign="center">
+        {/* Profile Image */}
+        <Avatar
+          size="2xl"
+          name="Debasmita Sarkar"
+          src="../profile.png"
+          border="3px solid #00CED1"
+          boxShadow="0 0 20px rgba(0,206,209,0.5)"
+        />
+        {/* Name & Title */}
         <Box>
-          <Text fontSize="3xl" fontWeight="bold" color="white">
+          <Text fontSize="3xl" fontWeight="bold">
             Debasmita Sarkar
           </Text>
           <Text fontSize="md" color="gray.300">
             Full Stack Developer
           </Text>
         </Box>
-        <HStack spacing="4" mt="2">
-          <Link href="https://github.com/Dsmita03" isExternal>
-            <IconButton
-              aria-label="Github"
-              icon={<FaGithub />}
-              size="lg"
-              fontSize={"2xl"}
-              bg="transparent"
-              color="white"
-              _hover={{ bg: "gray.700" }}
-              isRound
-            />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/debasmita-s-b47289254?"
-            isExternal
-          >
-            <IconButton
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              size="lg"
-              fontSize={"2xl"}
-              bg="transparent"
-              color="white"
-              _hover={{ bg: "gray.700" }}
-              isRound
-            />
-          </Link>
-          <Link href="https://twitter.com/dsmita_03" isExternal>
-            <IconButton
-              aria-label="Twitter"
-              icon={<FaXTwitter />}
-              size="lg"
-              bg="transparent"
-              color="white"
-              fontSize={"2xl"}
-              _hover={{ bg: "gray.700" }}
-              isRound
-            />
-          </Link>
-          <Link href="https://leetcode.com/u/debasmita_sarkar03/" isExternal>
-            <IconButton
-              aria-label="Leetcode"
-              icon={<SiLeetcode />}
-              size="lg"
-              bg="transparent"
-              color="white"
-              fontSize={"2xl"}
-              _hover={{ bg: "gray.700" }}
-              isRound
-            />
-          </Link>
+        {/* Social Icons */}
+        <HStack spacing={4}>
+          {[
+            {
+              href: "https://github.com/Dsmita03",
+              icon: FaGithub,
+              label: "GitHub",
+            },
+            {
+              href: "https://www.linkedin.com/in/debasmita-s-b47289254?",
+              icon: FaLinkedin,
+              label: "LinkedIn",
+            },
+            {
+              href: "https://twitter.com/dsmita_03",
+              icon: FaXTwitter,
+              label: "Twitter",
+            },
+            {
+              href: "https://leetcode.com/u/debasmita_sarkar03/",
+              icon: SiLeetcode,
+              label: "LeetCode",
+            },
+          ].map(({ href, icon, label }) => (
+            <Link key={label} href={href} isExternal>
+              <IconButton
+                aria-label={label}
+                icon={<Icon as={icon} />}
+                size="lg"
+                bg="whiteAlpha.100"
+                color="white"
+                _hover={{
+                  bg: "whiteAlpha.300",
+                  transform: "scale(1.1)",
+                }}
+                isRound
+              />
+            </Link>
+          ))}
         </HStack>
         {/* Contact Info */}
-        <Box pt="5">
+        <VStack spacing={2} pt={4}>
           <HStack>
-            <Icon as={MdEmail} fontSize={"20px"} color="#28969c" />
-            <Text fontSize={"16px"} color="gray.200">debasmita.s003@gmail.com</Text>
+            <Icon as={MdEmail} color="teal.200" />
+            <Text fontSize="sm" color="gray.200">
+              debasmita.s003@gmail.com
+            </Text>
           </HStack>
-          <HStack pt="3">
-            <Icon as={FaLocationDot} fontSize={"20px"} color="#28969c" />
-            <Text fontSize={"16px"} color="gray.200">Kolkata, India</Text>
+          <HStack>
+            <Icon as={FaLocationDot} color="teal.200" />
+            <Text fontSize="sm" color="gray.200">
+              Kolkata, India
+            </Text>
           </HStack>
-        </Box>
-        {/* Download Resume Button */}
+        </VStack>
+        {/* Resume Button */}
         <Button
           as="a"
-          href="https://drive.google.com/file/d/13Uutc1mE9LxBBURV2haI71gHNY1y_dkC/view?usp=sharing"
-          download="Resume.pdf"
-          mt="6"
+          href="https://drive.google.com/file/d/13HOjKuGFLF2JUm841C9CIQRCfveuHK8P/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          mt={6}
           colorScheme="teal"
           variant="solid"
           size="lg"
-          width="full"
-          _hover={{ bg: "teal.600" }}
-          boxShadow="md"
+          leftIcon={<FaEye />}
+          w="full"
+          boxShadow="lg"
+          _hover={{ bg: "teal.500", transform: "scale(1.02)" }}
         >
-          <Icon as={FaEye} fontSize="20px" mr={"2"} />
           View Resume
         </Button>
       </VStack>

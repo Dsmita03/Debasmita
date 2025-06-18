@@ -1,12 +1,16 @@
-#  Modern_Portfolio
+# Portfolio
 
-Welcome to my personal portfolio website! This project showcases my skills, experiences, and projects in web development, design, and other areas of expertise. Built with React and powered by Vite for fast performance and developer experience.
+Welcome to my personal portfolio website! Built with **React** and **Vite**, this site highlights my skills, projects, and experience in web development and design.
 
+## 🔗 Live Site
+[https://debasmita-ten.vercel.app](https://debasmita-ten.vercel.app)
 
-## Features
-- Responsive Design: Optimized for all devices, from desktops to smartphones.
-- Interactive Projects: Live demos of my key projects.
-- Skills Section: A list of technologies and tools I am proficient in.
-- Contact Form: Reach out for collaborations or employment opportunities.
+## ✨ Features
+- Responsive design for all devices
+- Projects with live demos
+- Skills overview
+- Contact form for collaborations
 
-Link- https://debasmita-ten.vercel.app/
+---
+
+Thanks for visiting!
