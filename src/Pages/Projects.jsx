@@ -29,7 +29,7 @@ const Projects = () => {
       imageUrl: '/AgriTech.png',
       description: 'Smart agriculture platform with crop recommendations, weather, and disease detection.',
       tags: ['React', 'Node.js', 'AI'],
-      liveLink: 'https://agritech-hub-frontend.onrender.com/',
+      liveLink: 'https://agritech-hub-fe.onrender.com/',
       githubLink: 'https://github.com/Dsmita03/AgriTech-Hub',
     },
     {

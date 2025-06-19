@@ -105,7 +105,7 @@ const Sidebar = () => {
         {/* Resume Button */}
         <Button
           as="a"
-          href="https://drive.google.com/file/d/13HOjKuGFLF2JUm841C9CIQRCfveuHK8P/view?usp=sharing"
+          href="https://drive.google.com/file/d/1eLmI8zTGmy08STcQ-oVpj9ZXQu_EDlTN/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           mt={6}
