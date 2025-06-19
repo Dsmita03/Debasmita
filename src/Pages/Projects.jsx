@@ -48,13 +48,12 @@ const Projects = () => {
       liveLink: 'https://canvas-craft-xi.vercel.app/',
       githubLink: 'https://github.com/Dsmita03/CanvasCraft',
     },
-    {
-      name: 'EduStack',
-      imageUrl: '/edu.png',
-      description: 'E-learning platform built on MERN stack for managing courses.',
-      tags: ['MERN', 'MongoDB', 'Node.js'],
-      liveLink: 'https://edustack-fe.onrender.com',
-      githubLink: 'https://github.com/Dsmita03/EduStack',
+     {
+      name: 'AI-Powered-Resume-Analyzer',
+      imageUrl: '/res.png',
+      description: 'Gemini AI + NLP-powered resume analysis with smart suggestions.',
+      tags: ['AI', 'Gemini', 'NLP'],
+      githubLink: 'https://github.com/Dsmita03/AI-Powered-Resume-Analyzer',
     },
     {
       name: 'RealTimeChatApp',
@@ -71,11 +70,12 @@ const Projects = () => {
       githubLink: 'https://github.com/Dsmita03/CryptoWeather-Nexus',
     },
     {
-      name: 'AI-Powered-Resume-Analyzer',
-      imageUrl: '/res.png',
-      description: 'Gemini AI + NLP-powered resume analysis with smart suggestions.',
-      tags: ['AI', 'Gemini', 'NLP'],
-      githubLink: 'https://github.com/Dsmita03/AI-Powered-Resume-Analyzer',
+      name: 'EduStack',
+      imageUrl: '/edu.png',
+      description: 'E-learning platform built on MERN stack for managing courses.',
+      tags: ['MERN', 'MongoDB', 'Node.js'],
+      liveLink: 'https://edustack-fe.onrender.com',
+      githubLink: 'https://github.com/Dsmita03/EduStack',
     },
     {
       name: 'Snapgram',
