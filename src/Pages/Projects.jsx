@@ -32,6 +32,14 @@ const Projects = () => {
       liveLink: 'https://agritech-hub-fe.onrender.com/',
       githubLink: 'https://github.com/Dsmita03/AgriTech-Hub',
     },
+     {
+      name: 'GreenPulse',
+      imageUrl: '/greenPulse.png',
+      description: 'GreenPulse uses technology to promote sustainability through interactive maps, news, resources, and tools that help communities build smarter, greener cities.',
+      tags: ['Next.js', 'TypeScript'],
+      liveLink: 'https://greencity-sable.vercel.app/',
+      githubLink: 'https://github.com/Raktim-Mitra/greencity',
+    },
     {
       name: 'AlgoScope',
       imageUrl: '/algo.png',
@@ -42,7 +50,7 @@ const Projects = () => {
     },
     {
       name: 'CanvasCraft',
-      imageUrl: '/canvaCraft.png',
+      imageUrl: '/canvasCraft.png',
       description: 'Excalidraw-style sketch tool built with React and Rough.js.',
       tags: ['React', 'TypeScript'],
       liveLink: 'https://canvas-craft-xi.vercel.app/',
@@ -81,7 +89,7 @@ const Projects = () => {
       name: 'Snapgram',
       imageUrl: '/snapgram.png',
       description: 'Instagram-inspired social platform built with modern frontend stack.',
-      tags: ['Social', 'Frontend'],
+      tags: ['Social', 'Frontend', 'Appwrite'],
       liveLink: 'https://snapgram-gamma-fawn.vercel.app',
       githubLink: 'https://github.com/Dsmita03/Snapgram',
     },

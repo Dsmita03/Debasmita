@@ -28,7 +28,7 @@ const About = () => {
       degree: 'Bachelor of Technology (B.Tech)',
       emoji: '🎓',
       location: 'GCECT, Kolkata',
-      grade: 'CGPA: 9.24',
+      grade: 'CGPA: 9.34',
       department: 'Information Technology',
     },
     {
